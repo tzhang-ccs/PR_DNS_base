@@ -476,8 +476,8 @@ static void Rogallo_state(
 				wn = 0.0;
 				for (l = 0; l < dim; l++)
 				{
-				w[l] = (icrds[l]);
-				wn += w[l]*w[l];
+					w[l] = (icrds[l]);
+					wn += w[l]*w[l];
 				}
 				wn = sqrt(wn);
 				
