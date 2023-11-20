@@ -1109,7 +1109,7 @@ void Incompress_Solver_Smooth_2D_Cartesian::setInitialCondition()
 	    	(*getInitialState)(comp,coords,field,i,dim,iFparams);
         }
 	computeGradientQ();
-        copyMeshStates();
+    copyMeshStates();
 	setAdvectionDt();
 	if (debugging("trace"))
 	    printf("Leaving setInitCondition()\n");
@@ -1117,18 +1117,18 @@ void Incompress_Solver_Smooth_2D_Cartesian::setInitialCondition()
 
 void Incompress_Solver_Smooth_2D_Cartesian::setParallelVelocity()
 {
-        FILE *infile;
-        int i,j,id,k,l,index,G_index;
-        char fname[100];
-        COMPONENT comp;
-        double coords[MAXD];
-        int size = (int)cell_center.size();
-	int myid = pp_mynode();
+    FILE *infile;
+    int i,j,id,k,l,index,G_index;
+    char fname[100];
+    COMPONENT comp;
+    double coords[MAXD];
+    int size = (int)cell_center.size();
+   	int myid = pp_mynode();
 	int numprocs = pp_numnodes();
 
-        int G_icoords[MAXD],pp_icoords[MAXD],icoords[MAXD];
-        int local_gmax[MAXD], global_gmax[MAXD];
-        int G_size, L_size;
+    int G_icoords[MAXD],pp_icoords[MAXD],icoords[MAXD];
+    int local_gmax[MAXD], global_gmax[MAXD];
+    int G_size, L_size;
 	PP_GRID *pp_grid = front->pp_grid;
 	double *local_L = pp_grid->Zoom_grid.L;
 	double *local_U = pp_grid->Zoom_grid.U;
@@ -1158,15 +1158,13 @@ void Incompress_Solver_Smooth_2D_Cartesian::setParallelVelocity()
 	    uni_array(&GV_buff,G_size,sizeof(double));
 	 
 	    if (setInitialVelocity != NULL)
-                (*setInitialVelocity)(comp,pp_grid->Global_grid.gmax,
-				   GU_buff,GV_buff,NULL,
-				   &(pp_grid->Global_grid),iFparams);
+                (*setInitialVelocity)(comp,pp_grid->Global_grid.gmax,GU_buff,GV_buff,NULL,&(pp_grid->Global_grid),iFparams);
 	    for (id = 0; id < numprocs; id++)
 	    {            
-		find_Cartesian_coordinates(id,pp_grid,pp_icoords);
-		for (j = jmin; j <= jmax; ++j)
-            	for (i = imin; i <= imax; ++i)
-            	{
+		    find_Cartesian_coordinates(id,pp_grid,pp_icoords);
+		    for (j = jmin; j <= jmax; ++j)
+            for (i = imin; i <= imax; ++i)
+            {
 	            icoords[0] = i;
 	            icoords[1] = j;
 	            G_icoords[0] = pp_icoords[0]*(local_gmax[0]+1)+icoords[0]-imin;
@@ -1180,8 +1178,8 @@ void Incompress_Solver_Smooth_2D_Cartesian::setParallelVelocity()
 		{	
 		    for (i = 0; i < L_size; i++)
 		    {
-			field->vel[0][i] = U_buff[i];
-			field->vel[1][i] = V_buff[i];
+			    field->vel[0][i] = U_buff[i];
+			    field->vel[1][i] = V_buff[i];
 		    }
 		}
 		else
@@ -1199,7 +1197,7 @@ void Incompress_Solver_Smooth_2D_Cartesian::setParallelVelocity()
 	    for (i = 0; i < L_size; i++)
 	    {
 	        field->vel[0][i] = U_buff[i];
-		field->vel[1][i] = V_buff[i];
+		    field->vel[1][i] = V_buff[i];
 	    }
 	}
 
@@ -1223,8 +1221,8 @@ void Incompress_Solver_Smooth_2D_Cartesian::setParallelVelocity()
 	FT_FreeThese(2,U_buff,V_buff);
 
 	computeGradientQ();
-        copyMeshStates();
-        setAdvectionDt();
+    copyMeshStates();
+    setAdvectionDt();
 	if (debugging("trace"))
 	    printf("Leaving setParallelVelocity()\n");
 }

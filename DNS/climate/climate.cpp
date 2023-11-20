@@ -88,10 +88,8 @@ int main(int argc, char **argv)
 	dim	 		= f_basic.dim;
 
 
-	sprintf(restart_state_name,"%s/state.ts%s",restart_name,
-			right_flush(RestartStep,7));
-	sprintf(restart_name,"%s/intfc-ts%s",restart_name,
-			right_flush(RestartStep,7));
+	sprintf(restart_state_name,"%s/state.ts%s",restart_name,right_flush(RestartStep,7));
+	sprintf(restart_name,"%s/intfc-ts%s",restart_name,right_flush(RestartStep,7));
 	printf("*****************************************\n");
 	printf(" DNS of entrainment and mixing: ver 1015\n");
 	printf("*****************************************\n");
@@ -167,8 +165,6 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-
-
         init_fluid_state_func(&front,l_cartesian);
         init_vapor_state_func(&front,v_cartesian);
         init_temp_state_func(&front,v_cartesian);

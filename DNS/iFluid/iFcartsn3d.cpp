@@ -1402,10 +1402,10 @@ void Incompress_Solver_Smooth_3D_Cartesian::setInitialCondition()
             FT_MakeCompGridIntfc(front);
 	setDomain();
 
-        m_rho[0] = iFparams->rho1;
-        m_rho[1] = iFparams->rho2;
-        m_mu[0] = iFparams->mu1;
-        m_mu[1] = iFparams->mu2;
+	m_rho[0] = iFparams->rho1;
+	m_rho[1] = iFparams->rho2;
+	m_mu[0] = iFparams->mu1;
+	m_mu[1] = iFparams->mu2;
 	m_comp[0] = iFparams->m_comp1;
 	m_comp[1] = iFparams->m_comp2;
 	m_smoothing_radius = iFparams->smoothing_radius;
@@ -1421,21 +1421,21 @@ void Incompress_Solver_Smooth_3D_Cartesian::setInitialCondition()
 	}
 
 	// Initialize state at cell_center
-        for (i = 0; i < size; i++)
-        {
-            getRectangleCenter(i, coords);
+    for (i = 0; i < size; i++)
+    {
+        getRectangleCenter(i, coords);
 	    //cell_center[i].m_state.setZero();
 	    comp = top_comp[i];
 	    if (getInitialState != NULL)
 	    {
 	    	(*getInitialState)(comp,coords,field,i,dim,iFparams);
-		pres[i] = getPressure(front,coords,NULL);
-                phi[i] = getPhiFromPres(front,pres[i]);
+			pres[i] = getPressure(front,coords,NULL);
+            phi[i] = getPhiFromPres(front,pres[i]);
 	    }
         }
 
-        computeGradientQ();
-        copyMeshStates();
+    computeGradientQ();
+    copyMeshStates();
 	setAdvectionDt();
 }       /* end setInitialCondition */
 
@@ -2030,36 +2030,36 @@ static int parab_find_state_at_crossing(
 
 void Incompress_Solver_Smooth_3D_Cartesian::setParallelVelocity(void)
 {
-        FILE *infile;
-        int i,j,id,k,l,index,G_index;
-        char fname[100];
-        COMPONENT comp;
-        double coords[MAXD];
-        int size = (int)cell_center.size();
-        int myid = pp_mynode();
-        int numprocs = pp_numnodes();
+	FILE *infile;
+	int i,j,id,k,l,index,G_index;
+	char fname[100];
+	COMPONENT comp;
+	double coords[MAXD];
+	int size = (int)cell_center.size();
+	int myid = pp_mynode();
+	int numprocs = pp_numnodes();
 
-        int G_icoords[MAXD],pp_icoords[MAXD],icoords[MAXD];
-        int local_gmax[MAXD], global_gmax[MAXD];
-        int G_size, L_size;
-        PP_GRID *pp_grid = front->pp_grid;
-        double *local_L = pp_grid->Zoom_grid.L;
-        double *local_U = pp_grid->Zoom_grid.U;
-        double *GU_buff,*GV_buff, *GW_buff, *U_buff, *V_buff, *W_buff;
+	int G_icoords[MAXD],pp_icoords[MAXD],icoords[MAXD];
+	int local_gmax[MAXD], global_gmax[MAXD];
+	int G_size, L_size;
+	PP_GRID *pp_grid = front->pp_grid;
+	double *local_L = pp_grid->Zoom_grid.L;
+	double *local_U = pp_grid->Zoom_grid.U;
+	double *GU_buff,*GV_buff, *GW_buff, *U_buff, *V_buff, *W_buff;
 	int U_tag = 5647;
 
 	if(debugging("trace"))
 	    printf("Entering setParallelVelocity()\n");
 
-        for (i = 0; i < dim; i++)
-        {
-            global_gmax[i] = pp_grid->Global_grid.gmax[i]-1;
-            local_gmax[i] = pp_grid->Zoom_grid.gmax[i]-1;
-        }
-        FT_MakeGridIntfc(front);
-        setDomain();
-        G_size = 1;
-        L_size = 1;
+	for (i = 0; i < dim; i++)
+	{
+		global_gmax[i] = pp_grid->Global_grid.gmax[i]-1;
+		local_gmax[i] = pp_grid->Zoom_grid.gmax[i]-1;
+	}
+	FT_MakeGridIntfc(front);
+	setDomain();
+	G_size = 1;
+	L_size = 1;
         for (i = 0; i < dim; i++)
         {
             G_size = G_size * (global_gmax[i]+1);
@@ -2075,9 +2075,7 @@ void Incompress_Solver_Smooth_3D_Cartesian::setParallelVelocity(void)
             uni_array(&GW_buff,G_size,sizeof(double));
 
 	    if (setInitialVelocity != NULL)
-                (*setInitialVelocity)(comp,pp_grid->Global_grid.gmax,
-				   GU_buff,GV_buff,GW_buff,
-				   &(pp_grid->Global_grid),iFparams);
+                (*setInitialVelocity)(comp,pp_grid->Global_grid.gmax,GU_buff,GV_buff,GW_buff,&(pp_grid->Global_grid),iFparams);
             for (id = 0; id < numprocs; id++)
             {
                 find_Cartesian_coordinates(id,pp_grid,pp_icoords);
@@ -2087,7 +2085,7 @@ void Incompress_Solver_Smooth_3D_Cartesian::setParallelVelocity(void)
                 {
                     icoords[0] = i;
                     icoords[1] = j;
-		    icoords[2] = k;
+		    		icoords[2] = k;
                     G_icoords[0] = pp_icoords[0]*(local_gmax[0]+1)+icoords[0]-imin;
                     G_icoords[1] = pp_icoords[1]*(local_gmax[1]+1)+icoords[1]-jmin;
                     G_icoords[2] = pp_icoords[2]*(local_gmax[2]+1)+icoords[2]-kmin;

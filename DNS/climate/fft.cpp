@@ -63,8 +63,8 @@ extern bool fftnd(
 	if (Nr > N_max)
 	{
 	    N_max = Nr;
-            fftw_free(cplx_array);
-            fftw_free(real_array);
+        fftw_free(cplx_array);
+        fftw_free(real_array);
 	    real_array = new double[Nr];
 	    cplx_array = new fftw_complex[Nc];
 	}
@@ -72,21 +72,21 @@ extern bool fftnd(
 	switch (dir)
 	{
 	    case 1:
-		p = fftw_plan_dft_r2c(dim,N,real_array,cplx_array,flags);
-		for (i = 0; i < Nr; i++ )
-		    real_array[i] = in[i][0];
-		break;
+			p = fftw_plan_dft_r2c(dim,N,real_array,cplx_array,flags);
+			for (i = 0; i < Nr; i++ )
+		    	real_array[i] = in[i][0];
+			break;
 	    case -1:
-		p = fftw_plan_dft_c2r(dim,N,cplx_array,real_array,flags);
-		for (i = 0; i < Nc; i++ )
-		{
-		    cplx_array[i][0] = in[i][0]; /*normalization*/
-		    cplx_array[i][1] = in[i][1]; /*normalization*/
-		}
-		break;
+			p = fftw_plan_dft_c2r(dim,N,cplx_array,real_array,flags);
+			for (i = 0; i < Nc; i++ )
+			{
+		    	cplx_array[i][0] = in[i][0]; /*normalization*/
+		    	cplx_array[i][1] = in[i][1]; /*normalization*/
+			}
+			break;
 	    default:
-		printf("Dir can only be -1 and 1 in FFT: unknown %d\n",dir);
-		break;  
+			printf("Dir can only be -1 and 1 in FFT: unknown %d\n",dir);
+			break;  
 	}	
 
 	fftw_execute(p); /*excute FFT*/

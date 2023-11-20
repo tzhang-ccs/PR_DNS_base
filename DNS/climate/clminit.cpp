@@ -75,10 +75,10 @@ extern void read_CL_prob_type(Front* front)
 	{
 	    *prob_type = PARTICLE_TRACKING;
 	    eqn_params->no_droplets = NO; 
-            eqn_params->init_state = FOURIER_STATE;
-            eqn_params->init_vapor_state = CONST_STATE;
-            iFparams->if_buoyancy = YES;
-            iFparams->if_ref_pres = YES;
+        eqn_params->init_state = FOURIER_STATE;
+        eqn_params->init_vapor_state = CONST_STATE;
+        iFparams->if_buoyancy = YES;
+        iFparams->if_ref_pres = YES;
 	    if (string[1] == 'R' || string[1] == 'r')
 	    {
 		eqn_params->if_condensation = NO;
@@ -97,8 +97,8 @@ extern void read_CL_prob_type(Front* front)
 	{
 	    *prob_type = RANDOM_FIELD;
 	    eqn_params->no_droplets = YES;
-            eqn_params->init_state = TAYLOR_STATE;
-            eqn_params->init_vapor_state = RAND_STATE;
+        eqn_params->init_state = TAYLOR_STATE;
+        eqn_params->init_vapor_state = RAND_STATE;
 	    iFparams->if_buoyancy = NO;
 	    iFparams->if_ref_pres = NO;
 	}
@@ -106,8 +106,8 @@ extern void read_CL_prob_type(Front* front)
 	{
 	    *prob_type = RANDOM_FIELD;
 	    eqn_params->no_droplets = YES;
-            eqn_params->init_state = FOURIER_STATE;
-            eqn_params->init_vapor_state = RAND_STATE;
+        eqn_params->init_state = FOURIER_STATE;
+        eqn_params->init_vapor_state = RAND_STATE;
 	    iFparams->if_buoyancy = YES;
 	    iFparams->if_ref_pres = NO;
 	}

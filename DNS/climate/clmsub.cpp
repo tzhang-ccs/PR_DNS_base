@@ -32,13 +32,10 @@ static void zero_state(COMPONENT,double*,IF_FIELD*,int,int,IF_PARAMS*);
 static void rand_state(COMPONENT,double*,IF_FIELD*,int,int,IF_PARAMS*);
 static void Taylor_Green_state(COMPONENT,double*,IF_FIELD*,int,int,IF_PARAMS*);
 static void ABC_state(COMPONENT,double*,IF_FIELD*,int,int,IF_PARAMS*);
-static void Fourier_state(COMPONENT,int*,double*,double*,double*,
-			RECT_GRID*,IF_PARAMS*);
-static void Rogallo_state(COMPONENT,int*,double*,double*,double*,
-			RECT_GRID*,IF_PARAMS*);
+static void Fourier_state(COMPONENT,int*,double*,double*,double*,RECT_GRID*,IF_PARAMS*);
+static void Rogallo_state(COMPONENT,int*,double*,double*,double*,RECT_GRID*,IF_PARAMS*);
 static double intrp_between(double,double,double,double,double);
-static double (*getStateVel[MAXD])(POINTER) = {getStateXvel,getStateYvel,
-                                        getStateZvel};
+static double (*getStateVel[MAXD])(POINTER) = {getStateXvel,getStateYvel,getStateZvel};
 
 extern void melt_flowThroughBoundaryState(
         double          *p0,
@@ -383,7 +380,7 @@ void init_temp_state_func(
 
 void init_fluid_state_func(
 	Front *front,
-        Incompress_Solver_Smooth_Basis *l_cartesian)
+    Incompress_Solver_Smooth_Basis *l_cartesian)
 {
         PARAMS *eqn_params = (PARAMS*)front->extra2;
         switch(eqn_params->init_state)
@@ -394,15 +391,15 @@ void init_fluid_state_func(
             case TAYLOR_STATE:
                 l_cartesian->getInitialState = Taylor_Green_state;
                 break;
-	    case ZERO_STATE:
-		l_cartesian->getInitialState = zero_state;
-	        break;
-	    case ABC_STATE:
-		l_cartesian->getInitialState = ABC_state;
-		break;
-	    case FOURIER_STATE:
-		l_cartesian->setInitialVelocity = Rogallo_state;
-		break;
+	    	case ZERO_STATE:
+				l_cartesian->getInitialState = zero_state;
+	        	break;
+	    	case ABC_STATE:
+				l_cartesian->getInitialState = ABC_state;
+				break;
+	    	case FOURIER_STATE:
+				l_cartesian->setInitialVelocity = Rogallo_state;
+				break;
             default:
                 l_cartesian->getInitialState = zero_state;
         }
@@ -499,8 +496,8 @@ static void Rogallo_state(
 			/*get solution from iFFT*/
 			for (i = 0; i < Nr; i++)
 			{
-					vel_x[i] = U[i][0];
-					vel_y[i] = V[i][0];
+				vel_x[i] = U[i][0];
+				vel_y[i] = V[i][0];
 			}
 			delete[] U;
 			delete[] V;
@@ -517,8 +514,8 @@ static void Rogallo_state(
 			for (i = 0; i < gmax[0]; i++)
 			{
 				if (i == 0 && j == 0 && k == 0)
-				continue;
-						index = k + gmax[2]*(j + gmax[1]*i); /*row major format*/ 
+					continue;
+				index = k + gmax[2]*(j + gmax[1]*i); /*row major format*/ 
 				icrds[0] = i; 
 				icrds[1] = j;
 				icrds[2] = k;
@@ -531,8 +528,8 @@ static void Rogallo_state(
 				wn = 0.0;
 				for (l = 0; l < dim; l++)
 				{
-				w[l] = (icrds[l]);
-				wn += w[l]*w[l];
+					w[l] = (icrds[l]);
+					wn += w[l]*w[l];
 				}
 				wn = sqrt(wn);
 				
@@ -548,22 +545,15 @@ static void Rogallo_state(
 				beta[1] = sqrt(E/(4.0*M_PI*wn*wn))*sin(theta)*sin(phi);
 				if (w[0] == 0 && w[1] == 0)
 				continue;
-				U[index][0] = (alpha[0]*wn*w[1]+beta[0]*w[0]*w[2])
-						/ (wn*sqrt(w[0]*w[0]+w[1]*w[1]));
-				U[index][1] = (alpha[1]*wn*w[1]+beta[1]*w[0]*w[2])
-											/ (wn*sqrt(w[0]*w[0]+w[1]*w[1]));
-				V[index][0] = (beta[0]*w[1]*w[2]-alpha[0]*wn*w[0])
-											/ (wn*sqrt(w[0]*w[0]+w[1]*w[1]));
-						V[index][1] = (beta[1]*w[1]*w[2]-alpha[0]*wn*w[0])
-											/ (wn*sqrt(w[0]*w[0]+w[1]*w[1]));
-				W[index][0] = -(beta[0]*sqrt(w[0]*w[0]+w[1]*w[1]))
-						/ wn;
-				W[index][1] = -(beta[1]*sqrt(w[0]*w[0]+w[1]*w[1]))
-											/ wn;
-				Div[index][0] = U[index][0]*w[0] 
-					+ V[index][0]*w[1] + W[index][0]*w[2];
+				U[index][0] = (alpha[0]*wn*w[1]+beta[0]*w[0]*w[2])/ (wn*sqrt(w[0]*w[0]+w[1]*w[1]));
+				U[index][1] = (alpha[1]*wn*w[1]+beta[1]*w[0]*w[2])/ (wn*sqrt(w[0]*w[0]+w[1]*w[1]));
+				V[index][0] = (beta[0]*w[1]*w[2]-alpha[0]*wn*w[0])/ (wn*sqrt(w[0]*w[0]+w[1]*w[1]));
+				V[index][1] = (beta[1]*w[1]*w[2]-alpha[0]*wn*w[0])/ (wn*sqrt(w[0]*w[0]+w[1]*w[1]));
+				W[index][0] = -(beta[0]*sqrt(w[0]*w[0]+w[1]*w[1]))/ wn;
+				W[index][1] = -(beta[1]*sqrt(w[0]*w[0]+w[1]*w[1]))/ wn;
+				Div[index][0] = U[index][0]*w[0] + V[index][0]*w[1] + W[index][0]*w[2];
 				Div[index][1] = U[index][0];
-					}
+			}
 			/*iFFT*/
 			fftnd(U,dim,N,-1);
 			fftnd(V,dim,N,-1);
@@ -571,9 +561,9 @@ static void Rogallo_state(
 			/*get solution from iFFT*/
 			for (i = 0; i < Nr; i++)
 			{
-					vel_x[i] = U[i][0];
-					vel_y[i] = V[i][0];
-					vel_z[i] = W[i][0];
+				vel_x[i] = U[i][0];
+				vel_y[i] = V[i][0];
+				vel_z[i] = W[i][0];
 			}
 			delete[] U;
 			delete[] V;
@@ -590,9 +580,9 @@ static void Rogallo_state(
 	    for (i = 0; i < Nr; i++)
 	    {
 		if (dim == 3)
-	    	  fprintf(file,"%9.8f %9.8f %9.8f\n",vel_x[i],vel_y[i],vel_z[i]);
+	    	fprintf(file,"%9.8f %9.8f %9.8f\n",vel_x[i],vel_y[i],vel_z[i]);
 		else if (dim == 2)
-	    	  fprintf(file,"%9.8f %9.8f\n",vel_x[i],vel_y[i]);
+	    	fprintf(file,"%9.8f %9.8f\n",vel_x[i],vel_y[i]);
 	    }
 	    fclose(file);
 	}
@@ -653,16 +643,14 @@ static void Fourier_state(
 		    }
 		    wn = (2*M_PI/L[0])*sqrt(i*i+j*j);
 		    phi  = (double)rand() / (RAND_MAX + 1.0);
-		    U[index][0] = wn*wn*exp(-wn*wn/pow(2*M_PI*4.7568/L[0],2))
-                                 * cos(2*M_PI*phi);
-                    U[index][1] = wn*wn*exp(-wn*wn/pow(2*M_PI*4.7568/L[0],2))
-                                 * sin(2*M_PI*phi);
+		    U[index][0] = wn*wn*exp(-wn*wn/pow(2*M_PI*4.7568/L[0],2))* cos(2*M_PI*phi);
+            U[index][1] = wn*wn*exp(-wn*wn/pow(2*M_PI*4.7568/L[0],2))* sin(2*M_PI*phi);
 		}
 	 	break;
 	    case 3:
                 for (k = 0; k < gmax[2]; k++)
                 for (j = 0; j < gmax[1]; j++)
-		for (i = 0; i < gmax[0]; i++)
+				for (i = 0; i < gmax[0]; i++)
                 {
                     index = k + gmax[2]*(j + gmax[1]*i); /*row major format*/ 
                     if ((i*i + j*j + k*k) > 6)
@@ -672,10 +660,8 @@ static void Fourier_state(
                     }
                     wn = (2*M_PI/L[0])*sqrt(i*i+j*j+k*k);
                     phi  = (double)rand() / (RAND_MAX + 1.0);
-                    U[index][0] = wn*wn*exp(-wn*wn/pow(2*M_PI*4.7568/L[0],2))
-                                 * cos(2*M_PI*phi);
-                    U[index][1] = wn*wn*exp(-wn*wn/pow(2*M_PI*4.7568/L[0],2))
-                                 * sin(2*M_PI*phi);
+                    U[index][0] = wn*wn*exp(-wn*wn/pow(2*M_PI*4.7568/L[0],2))* cos(2*M_PI*phi);
+                    U[index][1] = wn*wn*exp(-wn*wn/pow(2*M_PI*4.7568/L[0],2))* sin(2*M_PI*phi);
                 }
                 break;
 	    default:
@@ -712,21 +698,21 @@ static void ABC_state(
 	switch (dim)
 	{
 	    case 2:
-		for (i = 0; i < dim; i++)
-	    	    tcoords[i] = coords[i];
-	        vel[0][index] = cos(tcoords[1]);
-	        vel[1][index] = sin(tcoords[0]);
-		break;
+			for (i = 0; i < dim; i++)
+	   		 	tcoords[i] = coords[i];
+	    	vel[0][index] = cos(tcoords[1]);
+	    	vel[1][index] = sin(tcoords[0]);
+			break;
 	    case 3:
-		for (i = 0; i < dim; i++)
+			for (i = 0; i < dim; i++)
 	    	    tcoords[i] = coords[i];
-		vel[0][index] = cos(tcoords[1])+sin(tcoords[2]);
-		vel[1][index] = sin(tcoords[0])+cos(tcoords[2]);
-		vel[2][index] = cos(tcoords[0])+sin(tcoords[1]);
-		break;
+			vel[0][index] = cos(tcoords[1])+sin(tcoords[2]);
+			vel[1][index] = sin(tcoords[0])+cos(tcoords[2]);
+			vel[2][index] = cos(tcoords[0])+sin(tcoords[1]);
+			break;
 	    default:
-		printf("Unknown dim = %d\n",dim);
-		clean_up(ERROR);
+			printf("Unknown dim = %d\n",dim);
+			clean_up(ERROR);
 	}
 }       /* end ABC_state */
 
