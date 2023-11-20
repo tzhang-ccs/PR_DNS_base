@@ -1,0 +1,2 @@
+#!/bin/csh -f
+mpirun  -n 8 ./climate -d 3 -p 2 2 2 -i input-pr-dns/in-entrainment3dd_case1  -o out-entrainment3dd_case1

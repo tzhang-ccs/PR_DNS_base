@@ -1,0 +1,312 @@
+./climate.cpp:230:	movie_option = eqn_params->movie_option;
+./climate.cpp:242:	    if (eqn_params->prob_type == PARTICLE_TRACKING)
+./climate.cpp:256:	    if(eqn_params->init_drop_state == PRESET_STATE)
+./climate.cpp:272:        if (eqn_params->prob_type == PARTICLE_TRACKING &&
+./climate.cpp:283:            if (eqn_params->prob_type == PARTICLE_TRACKING)
+./climate.cpp:292:    if (eqn_params->prob_type == PARTICLE_TRACKING)
+./climate.cpp:304:	    if (eqn_params->if_volume_force && front->time < 1.0)
+./climate.cpp:313:                 if (eqn_params->prob_type == PARTICLE_TRACKING)
+./climate.cpp:335:		if (eqn_params->prob_type == PARTICLE_TRACKING)
+./climate.cpp.real_time:221:	movie_option = eqn_params->movie_option;
+./climate.cpp.real_time:235:	    if (eqn_params->prob_type == PARTICLE_TRACKING)
+./climate.cpp.real_time:248:	    if(eqn_params->init_drop_state == PRESET_STATE)
+./climate.cpp.real_time:264:            if (eqn_params->prob_type == PARTICLE_TRACKING &&
+./climate.cpp.real_time:275:            if (eqn_params->prob_type == PARTICLE_TRACKING)
+./climate.cpp.real_time:283:        if (eqn_params->prob_type == PARTICLE_TRACKING)
+./climate.cpp.real_time:293:	    if (eqn_params->if_volume_force && front->time < 1.0)
+./climate.cpp.real_time:302:                 if (eqn_params->prob_type == PARTICLE_TRACKING)
+./climate.cpp.real_time:322:		if (eqn_params->prob_type == PARTICLE_TRACKING)
+./clminit.cpp:45:	CL_PROB_TYPE *prob_type = &(eqn_params->prob_type);
+./clminit.cpp:56:	eqn_params->no_droplets = NO;
+./clminit.cpp:57:    eqn_params->init_state = RAND_STATE;
+./clminit.cpp:58:    eqn_params->init_vapor_state = CONST_STATE;
+./clminit.cpp:59:    eqn_params->init_temp_state = CONST_STATE;
+./clminit.cpp:60:    eqn_params->init_drop_state = RAND_STATE;
+./clminit.cpp:63:	eqn_params->if_condensation = YES;
+./clminit.cpp:64:	eqn_params->if_sedimentation = YES;
+./clminit.cpp:65:	eqn_params->if_volume_force = NO;
+./clminit.cpp:66:	eqn_params->frac = -1; /*frac is not predefined*/
+./clminit.cpp:67:        eqn_params->is_bigdata = NO; /*default is not to record full data*/
+./clminit.cpp:77:	    eqn_params->no_droplets = NO; 
+./clminit.cpp:78:            eqn_params->init_state = FOURIER_STATE;
+./clminit.cpp:79:            eqn_params->init_vapor_state = CONST_STATE;
+./clminit.cpp:84:		eqn_params->if_condensation = NO;
+./clminit.cpp:91:		    eqn_params->if_sedimentation = YES;	
+./clminit.cpp:93:		    eqn_params->if_sedimentation = NO;
+./clminit.cpp:99:	    eqn_params->no_droplets = YES;
+./clminit.cpp:100:            eqn_params->init_state = TAYLOR_STATE;
+./clminit.cpp:101:            eqn_params->init_vapor_state = RAND_STATE;
+./clminit.cpp:108:	    eqn_params->no_droplets = YES;
+./clminit.cpp:109:            eqn_params->init_state = FOURIER_STATE;
+./clminit.cpp:110:            eqn_params->init_vapor_state = RAND_STATE;
+./clminit.cpp:120:	    eqn_params->init_temp_state = PRESET_STATE;
+./clminit.cpp:124:		    eqn_params->init_state = FOURIER_STATE;
+./clminit.cpp:125:            eqn_params->init_vapor_state = FOURIER_STATE;
+./clminit.cpp:128:		    eqn_params->init_state = FOURIER_STATE;
+./clminit.cpp:129:            eqn_params->init_vapor_state = LR_STATE;
+./clminit.cpp:132:		    eqn_params->init_state = FOURIER_STATE;
+./clminit.cpp:133:            eqn_params->init_vapor_state = TB_STATE;
+./clminit.cpp:141:            	fscanf(infile,"%lf",&eqn_params->frac);
+./clminit.cpp:142:            	(void) printf("%f\n",eqn_params->frac);
+./clminit.cpp:150:                	eqn_params->if_condensation = YES;
+./clminit.cpp:152:                	eqn_params->if_condensation = NO;
+./clminit.cpp:155:	    eqn_params->no_droplets = NO;
+./clminit.cpp:156:            eqn_params->init_drop_state = PRESET_STATE;
+./clminit.cpp:171:                eqn_params->is_bigdata = YES;
+./clminit.cpp:173:                eqn_params->is_bigdata = NO;
+./clminit.cpp:217:                eqn_params->if_sedimentation = YES;
+./clminit.cpp:219:                eqn_params->if_sedimentation = NO;
+./clminit.cpp:227:                eqn_params->if_condensation = YES;
+./clminit.cpp:229:                eqn_params->if_condensation = NO;
+./clminit.cpp:237:                eqn_params->init_state = RAND_STATE;
+./clminit.cpp:239:                eqn_params->init_state = ZERO_STATE;
+./clminit.cpp:241:                eqn_params->init_state = TAYLOR_STATE;
+./clminit.cpp:243:		eqn_params->init_state = PRESET_STATE;
+./clminit.cpp:245:		eqn_params->init_state = FOURIER_STATE;
+./clminit.cpp:258:                eqn_params->init_vapor_state = RAND_STATE;
+./clminit.cpp:260:                eqn_params->init_vapor_state = CONST_STATE;
+./clminit.cpp:262:                eqn_params->init_vapor_state = TB_STATE;
+./clminit.cpp:264:                eqn_params->init_vapor_state = LR_STATE;
+./clminit.cpp:266:                eqn_params->init_vapor_state = FOURIER_STATE;
+./clminit.cpp:279:                eqn_params->init_drop_state = RAND_STATE;
+./clminit.cpp:281:                eqn_params->init_drop_state = PRESET_STATE;
+./clminit.cpp:305:	eqn_params->T0 = 273;
+./clminit.cpp:306:	eqn_params->qe = 2.848;
+./clminit.cpp:307:	eqn_params->D = 0.0000216;
+./clminit.cpp:308:	eqn_params->Lh = 2500000.0;
+./clminit.cpp:309:	eqn_params->Rv = 461.5;
+./clminit.cpp:310:	eqn_params->Rd = 287.0;
+./clminit.cpp:311:	eqn_params->Kc = 0.0238;
+./clminit.cpp:312:	eqn_params->Cp = 1005.0;
+./clminit.cpp:314:	    eqn_params->Nclip[i] = 1;
+./clminit.cpp:318:	fscanf(infile,"%lf ",&eqn_params->T0);
+./clminit.cpp:319:	(void) printf("%f\n",eqn_params->T0);	
+./clminit.cpp:322:	fscanf(infile,"%lf ",&eqn_params->qe);
+./clminit.cpp:323:	(void) printf("%f\n",eqn_params->qe);
+./clminit.cpp:330:        fscanf(infile,"%lf ",&eqn_params->D);
+./clminit.cpp:331:        (void) printf("%f\n",eqn_params->D); 
+./clminit.cpp:334:        fscanf(infile,"%lf ",&eqn_params->Lh);
+./clminit.cpp:335:        (void) printf("%f\n",eqn_params->Lh); 
+./clminit.cpp:338:        fscanf(infile,"%lf ",&eqn_params->Rv);
+./clminit.cpp:339:        (void) printf("%f\n",eqn_params->Rv);
+./clminit.cpp:342:        fscanf(infile,"%lf ",&eqn_params->Rd);
+./clminit.cpp:343:        (void) printf("%f\n",eqn_params->Rd); 
+./clminit.cpp:346:        fscanf(infile,"%lf ",&eqn_params->Kc);
+./clminit.cpp:347:        (void) printf("%f\n",eqn_params->Kc); 
+./clminit.cpp:350:        fscanf(infile,"%lf ",&eqn_params->Cp);
+./clminit.cpp:351:        (void) printf("%f\n",eqn_params->Cp); 
+./clminit.cpp:353:	eqn_params->num_scheme = UNSPLIT_IMPLICIT;  // default
+./clminit.cpp:354:	eqn_params->pde_order = 2; //default
+./clminit.cpp:364:	    	eqn_params->num_scheme = UNSPLIT_EXPLICIT;
+./clminit.cpp:367:	    	eqn_params->num_scheme = UNSPLIT_EXPLICIT_CIM;
+./clminit.cpp:370:	    	eqn_params->num_scheme = UNSPLIT_IMPLICIT;
+./clminit.cpp:373:	    	eqn_params->num_scheme = CRANK_NICOLSON;
+./clminit.cpp:376:	    	eqn_params->num_scheme = UNSPLIT_IMPLICIT_CIM;
+./clminit.cpp:378:	    	eqn_params->num_scheme = WENO_CRANK_NICOLSON;
+./clminit.cpp:381:	if (eqn_params->num_scheme == UNSPLIT_IMPLICIT)
+./clminit.cpp:385:	    	fscanf(infile,"%d",&eqn_params->pde_order);
+./clminit.cpp:386:		(void) printf("%d\n",eqn_params->pde_order);
+./clminit.cpp:399:	    eqn_params->L[i] = front->rect_grid->L[i];
+./clminit.cpp:400:	    eqn_params->U[i] = front->rect_grid->U[i];
+./clminit.cpp:405:            fscanf(infile,"%lf ",&eqn_params->L[i]);
+./clminit.cpp:406:            (void) printf("%f  ",eqn_params->L[i]);
+./clminit.cpp:412:            fscanf(infile,"%lf ",&eqn_params->U[i]);
+./clminit.cpp:413:            (void) printf("%f  ",eqn_params->U[i]);
+./clminit.cpp:421:                fscanf(infile,"%d ",&eqn_params->Nclip[i]);
+./clminit.cpp:422:                (void) printf("%d  ",eqn_params->Nclip[i]);
+./clminit.cpp:431:            eqn_params->if_volume_force = YES;
+./clminit.cpp:433:            eqn_params->if_volume_force = NO;
+./clminit.cpp:459:	eqn_params->num_drops = num_drops;
+./clminit.cpp:463:        eqn_params->rho_l = drop_dens;
+./clminit.cpp:465:	if (eqn_params->prob_type == PARTICLE_TRACKING)
+./clminit.cpp:470:	    FT_VectorMemoryAlloc((POINTER*)&eqn_params->particle_array,
+./clminit.cpp:474:		eqn_params->particle_array[i].rho = drop_dens;
+./clminit.cpp:475:		fscanf(infile,"%lf",&eqn_params->particle_array[i].radius);
+./clminit.cpp:477:		    fscanf(infile,"%lf",&eqn_params->particle_array[i].center[j]);
+./clminit.cpp:479:		    fscanf(infile,"%lf",&eqn_params->particle_array[i].vel[j]);
+./clminit.cpp:558:	eqn_params->num_drops = num_drops;
+./clminit.cpp:563:	eqn_params->rho_l = drop_dens;
+./clminit.cpp:601:	    if (eqn_params->prob_type == PARTICLE_TRACKING)
+./clminit.cpp:613:	    if (eqn_params->prob_type == PARTICLE_TRACKING)
+./clminit.cpp:620:		eqn_params->particle_array = particle_array;
+./clminit.cpp:686:        double *L = eqn_params->L; /*constrain for particles position*/
+./clminit.cpp:687:        double *U = eqn_params->U;
+./clminit.cpp:730:	eqn_params->num_drops = num_drops;
+./clminit.cpp:733:	    count *= eqn_params->Nclip[i];
+./clminit.cpp:735:	    setParticleGlobalIndex(particle_array,eqn_params->num_drops);
+./clminit.cpp:737:	    setParticleGroupIndex(particle_array,eqn_params->num_drops,dim,
+./clminit.cpp:738:                                  eqn_params->Nclip,
+./clmsub.cpp:58:        PHASE_FIELD *pH_field = eqn_params->field;
+./clmsub.cpp:230:	qs = eqn_params->qs; qe = eqn_params->qe;
+./clmsub.cpp:249:	RECT_GRID* global_grid = eqn_params->global_grid;
+./clmsub.cpp:251:	frac = eqn_params->frac;
+./clmsub.cpp:255:	qe = eqn_params->qe;
+./clmsub.cpp:256:	qs = eqn_params->qs;
+./clmsub.cpp:258:	if (eqn_params->frac > 0 && eqn_params->frac < 1)
+./clmsub.cpp:286:	RECT_GRID* global_grid = eqn_params->global_grid;
+./clmsub.cpp:290:	frac = eqn_params->frac;
+./clmsub.cpp:292:	qs = eqn_params->qs; 
+./clmsub.cpp:293:	qe = eqn_params->qe;
+./clmsub.cpp:296:	if (eqn_params->frac > 0 && eqn_params->frac < 1)
+./clmsub.cpp:328:        switch(eqn_params->init_vapor_state)
+./clmsub.cpp:348:			eqn_params->init_vapor_state);
+./clmsub.cpp:364:	T0 = eqn_params->T0; q0 = eqn_params->qv0;
+./clmsub.cpp:367:	T0 /= 1 - 0.608*0.001*(1.02*eqn_params->qs - q0);
+./clmsub.cpp:377:        switch(eqn_params->init_temp_state)
+./clmsub.cpp:388:			eqn_params->init_temp_state);
+./clmsub.cpp:398:        switch(eqn_params->init_state)
+./clmsub.cpp:838:        int       num_drops = eqn_params->num_drops;
+./clmsub.cpp:848:	for (i = 0; i < eqn_params->num_drops; i++)
+./clmsub.cpp:864:	for (i = 0; i < eqn_params->num_drops; i++)
+./clmsub.cpp:979:	int 		num_drops = eqn_params->num_drops;
+./clmsub.cpp:1050:	PARTICLE* particle_array = eqn_params->particle_array;
+./clmsub.cpp:1052:	double *supersat = eqn_params->field->supersat;
+./clmsub.cpp:1073:	for (i = 0; i < eqn_params->num_drops; i++)
+./clmsub.cpp:1099:	    if (eqn_params->if_condensation == YES)
+./clmsub.cpp:1100:	        delta_R = R*R+2*eqn_params->K*s*dt;
+./clmsub.cpp:1123:                if (eqn_params->if_sedimentation)
+./clmsub.cpp:1141:		if (eqn_params->if_sedimentation == YES) 
+./clmsub.cpp:1172:	        printf("Condensation rate: %20.19f\n",eqn_params->K);
+./clmsub.cpp:1188:	    eqn_params->particle_array = particle_array;
+./clmsub.cpp:1192:	eqn_params->num_drops,R_max,R_min);
+./clmsub.cpp:1272:        PARTICLE* particle_array = eqn_params->particle_array;
+./clmsub.cpp:1273:	int i,j,num_drops = eqn_params->num_drops;
+./clmsub.cpp:1296:	PARTICLE* particle_array = eqn_params->particle_array;
+./clmsub.cpp:1298:	int i, j, n = eqn_params->num_drops;
+./clmsub.cpp:1344:        PARTICLE* particle_array = eqn_params->particle_array;
+./clmsub.cpp:1352:	for (i = 0; i < eqn_params->num_drops; i++)
+./clmsub.cpp:1387:        for (i = 0; i < eqn_params->num_drops; i++)
+./clmsub.cpp:1400:	for (i = 0; i < eqn_params->num_drops; i++)
+./clmsub.cpp:1429:	    traj[i][step] = eqn_params->particle_array[0].center[i];
+./vcartsn.cpp:210:        gauss_params.mu = eqn_params->qe;
+./vcartsn.cpp:215:	eqn_params->qs = computeSatuVapor(eqn_params->T0,iFparams->ref_pres);
+./vcartsn.cpp:222:            sr->vapor = eqn_params->qe;
+./vcartsn.cpp:223:	    sl->vapor = eqn_params->qs * 1.02;
+./vcartsn.cpp:239:		if (eqn_params->init_vapor_state == RAND_STATE)
+./vcartsn.cpp:242:		else if (eqn_params->init_vapor_state == CONST_STATE)
+./vcartsn.cpp:243:		    field->vapor[i] = eqn_params->qe;
+./vcartsn.cpp:249:			   eqn_params->init_vapor_state);
+./vcartsn.cpp:255:                    field->temperature[i] = eqn_params->T0;
+./vcartsn.cpp:260:	eqn_params->qv0 = computeVolumeMean(field->vapor,front);
+./vcartsn.cpp:261:	eqn_params->T0 = computeVolumeMean(field->temperature,front);
+./vcartsn.cpp:262:        printf("T0 = %f\n", eqn_params->T0);
+./vcartsn.cpp:263:	printf("qs = %f, qv0 = %20.14f\n",eqn_params->qs,eqn_params->qv0);
+./vcartsn.cpp:375:	        if (eqn_params->num_scheme == CRANK_NICOLSON)
+./vcartsn.cpp:377:		    if(eqn_params->prob_type == PARTICLE_TRACKING)
+./vcartsn.cpp:382:	    	    computeAdvectionCN(sub_comp[i],field->vapor,eqn_params->D);
+./vcartsn.cpp:385:	    	    computeAdvectionCN(sub_comp[i],field->temperature,eqn_params->D);
+./vcartsn.cpp:387:	        else if (eqn_params->num_scheme == WENO_CRANK_NICOLSON)
+./vcartsn.cpp:389:		    if(eqn_params->prob_type == PARTICLE_TRACKING)
+./vcartsn.cpp:393:	    	    computeAdvectionWENO(sub_comp[i],field->vapor,eqn_params->D);
+./vcartsn.cpp:396:	    	    computeAdvectionWENO(sub_comp[i],field->temperature,eqn_params->D);
+./vcartsn.cpp:1082:	double *temp  = eqn_params->field->temperature;
+./vcartsn.cpp:1083:	double *vapor  = eqn_params->field->vapor;
+./vcartsn.cpp:1085:	double *super = eqn_params->field->supersat;
+./vcartsn.cpp:1092:        Lh = eqn_params->Lh;
+./vcartsn.cpp:1093:        Rv = eqn_params->Rv;
+./vcartsn.cpp:1094:        Rd = eqn_params->Rd;
+./vcartsn.cpp:1095:        rhoL = eqn_params->rho_l;
+./vcartsn.cpp:1096:        Kc = eqn_params->Kc;
+./vcartsn.cpp:1097:        D = eqn_params->D;
+./vcartsn.cpp:1118:     eqn_params->K = 1/((Lh/(Rv*T)-1)*Lh*rhoL/(Kc*T)+rhoL*Rv*T/(D*es));
+./vcartsn.cpp:1119:	printf("Condensation coeffecient = %e\n",eqn_params->K);
+./vcartsn.cpp:1131:					/(eqn_params->field->pres[index]
+./vcartsn.cpp:1137:		    if(eqn_params->field->pres[index] == 0)
+./vcartsn.cpp:1148:                    sat_vap_rat = 621.97 * sat_vap_pre/(eqn_params->field->pres[index]-sat_vap_pre);
+./vcartsn.cpp:1153:		            if(eqn_params->field->pres[index] == 0)
+./vcartsn.cpp:1171:	    D = eqn_params->D;
+./vcartsn.cpp:1358:	    eqn_params->field->vapor = vapor;
+./vcartsn.cpp:1372:	    eqn_params->field->vapor = vapor;
+./vcartsn.cpp:1389:	    eqn_params->field->vapor = vapor;
+./vcartsn.cpp:1945:	recordParticles(fname,eqn_params->particle_array,eqn_params->num_drops);
+./vcartsn.cpp:2036:        PARTICLE* particle_array = eqn_params->particle_array;
+./vcartsn.cpp:2042:        int group_id, num_drops = eqn_params->num_drops;
+./vcartsn.cpp:2055:                NGroup *= eqn_params->Nclip[i];
+./vcartsn.cpp:2066:                             eqn_params->Nclip[i];
+./vcartsn.cpp:2067:            group_gmax[i] = eqn_params->Nclip[i] - 1;
+./vcartsn.cpp:2160:	Lh = eqn_params->Lh;
+./vcartsn.cpp:2161:	Rv = eqn_params->Rv;
+./vcartsn.cpp:2162:	Rd = eqn_params->Rd;
+./vcartsn.cpp:2163:	rhoL = eqn_params->rho_l;
+./vcartsn.cpp:2164:	K = eqn_params->Kc;
+./vcartsn.cpp:2165:	D = eqn_params->D;
+./vcartsn.cpp:2166:	Cp = eqn_params->Cp;
+./vcartsn.cpp:2415:	PARTICLE *particle_array = eqn_params->particle_array;
+./vcartsn.cpp:2443:        if (eqn_params->num_drops > max_array_size)
+./vcartsn.cpp:2445:            max_array_size = eqn_params->num_drops;
+./vcartsn.cpp:2457:	eqn_params->disp_rate = computeDspRate();
+./vcartsn.cpp:2463:	for (i = 0; i < eqn_params->num_drops; i++)
+./vcartsn.cpp:2489:	t_mix = pow(L*L/eqn_params->disp_rate,1.0/3.0);
+./vcartsn.cpp:2492:	Deviation(radius_array,eqn_params->num_drops,rm,Dev);
+./vcartsn.cpp:2494:	env_supersat = eqn_params->qe/eqn_params->qs - 1.0;
+./vcartsn.cpp:2497:	    t_evap  = sqr(rm)/(-eqn_params->K*env_supersat);
+./vcartsn.cpp:2539:	eta = pow(pow(mu,3.0)/eqn_params->disp_rate,0.25);
+./vcartsn.cpp:2540:	NL = pow(eqn_params->disp_rate,0.5)*pow(t_react,1.5)/eta;
+./vcartsn.cpp:2542:		front->time,eqn_params->disp_rate,eta,t_react,NL);
+./vcartsn.cpp:2726:	PARTICLE* particle_array = eqn_params->particle_array;
+./vcartsn.cpp:2730:	int num_drops = eqn_params->num_drops;
+./vcartsn.cpp:2757:	Cd_mean *= 4.0*PI*eqn_params->rho_l*eqn_params->K
+./vcartsn.cpp:2977:        PARTICLE* particle_array = eqn_params->particle_array;
+./vcartsn.cpp:2978:        int num_drops = eqn_params->num_drops;
+./vcartsn.cpp:3029:	if (eqn_params->prob_type == PARTICLE_TRACKING)
+./vcartsn.cpp:3067:	if (!eqn_params->no_droplets && nzeros == 0)
+./vcartsn.cpp:3140:	    eqn_params->field = field;
+./vcartsn.cpp:3163:	    eqn_params->field = field;
+./vcartsn.cpp:3197:	    eqn_params->field = field;
+./vcartsn.cpp:3201:	eqn_params->global_grid = &(front->pp_grid->Global_grid);
+./vcartsn.cpp:3298:	if (eqn_params->num_drops > max_array_size)
+./vcartsn.cpp:3300:	    max_array_size = eqn_params->num_drops;
+./vcartsn.cpp:3305:	for (i = 0; i < eqn_params->num_drops; i++)
+./vcartsn.cpp:3309:	    if (eqn_params->particle_array[i].radius < MACH_EPS)
+./vcartsn.cpp:3311:	    center = eqn_params->particle_array[i].center;
+./vcartsn.cpp:3336:	PARTICLE* particle_array = eqn_params->particle_array;
+./vcartsn.cpp:3337:	int num_drops = eqn_params->num_drops;
+./vcartsn.cpp:3408:	if (eqn_params->num_drops > max_array_size)
+./vcartsn.cpp:3410:	    max_array_size = eqn_params->num_drops;
+./vcartsn.cpp:3414:	for (i = 0; i < eqn_params->num_drops; i++)
+./vcartsn.cpp:3415:	    radius_array[i] = eqn_params->particle_array[i].radius;
+./vcartsn.cpp:3418:	PDF = ComputePDF(radius_array,eqn_params->num_drops,bin_size,bin_num,min_radius,max_radius,ignore_zero);
+./vcartsn.cpp:3420:		max_radius, min_radius, eqn_params->num_drops,bin_num);
+./vcartsn.cpp:3449:        PARTICLE* particle_array = eqn_params->particle_array;
+./vcartsn.cpp:3459:        fscanf(infile,"%d",&eqn_params->num_drops);
+./vcartsn.cpp:3460:        (void) printf("%d\n",eqn_params->num_drops);
+./vcartsn.cpp:3517:            eqn_params->num_drops = int(ratio_in_subdomain*eqn_params->num_drops);
+./vcartsn.cpp:3518:            printf("%d droplets in subdomain\n",eqn_params->num_drops);
+./vcartsn.cpp:3528:                              eqn_params->num_drops,sizeof(PARTICLE));
+./vcartsn.cpp:3530:        while(count < eqn_params->num_drops)
+./vcartsn.cpp:3549:            particle_array[count].rho = eqn_params->rho_l;
+./vcartsn.cpp:3553:        for (l = 0; l < dim; l++) count *= eqn_params->Nclip[l];
+./vcartsn.cpp:3555:            setParticleGlobalIndex(particle_array,eqn_params->num_drops);
+./vcartsn.cpp:3557:            setParticleGroupIndex(particle_array,eqn_params->num_drops,dim,
+./vcartsn.cpp:3558:                                  eqn_params->Nclip,
+./vcartsn.cpp:3561:        eqn_params->particle_array = particle_array;
+./vcartsn.cpp:3893:	if (eqn_params->if_volume_force == NO)
+./vcartsn.cpp:3901:            eqn_params->disp_rate = eps;
+./vcartsn.cpp:3903:	eqn_params->disp_rate = computeDspRateLinear();
+./vcartsn.cpp:3904:        printf("eps_in = %e, eps_out = %e\n",eps,eqn_params->disp_rate);
+./vcartsn.cpp:3948:	if (eqn_params->if_volume_force == NO)
+./vcartsn.cpp:3961:	    eqn_params->disp_rate = eps;
+./vcartsn.cpp:3983:	eqn_params->disp_rate = computeDspRate();
+./vcartsn.cpp:3984:	printf("FFT: esp_in = %e, eps_out = %e\n",eps,eqn_params->disp_rate);
+./vcartsn.cpp:4215:        PARTICLE* particle_array = eqn_params->particle_array;
+./vcartsn.cpp:4216:        num_drops = eqn_params->num_drops;
+./vcartsn.cpp:4217:	double *supersat = eqn_params->field->supersat;
+./vcartsn.cpp:4218:	double *T = eqn_params->field->temperature;
+./vcartsn.cpp:4219:	double *qv = eqn_params->field->vapor;
+./vcartsn.cpp:4220:	double *qc = eqn_params->field->cloud;
+./vcartsn.cpp:4221:	double  T0 = eqn_params->T0;
+./vcartsn.cpp:4222:	double  q0 = eqn_params->qv0;
+./vcartsn.cpp:4258:	    coeff = 4.0*PI*particle_array[i].rho * eqn_params->K
+./vcartsn.cpp:4260:	    if (eqn_params->if_condensation)
+./vcartsn.cpp:4275:	if (eqn_params->if_volume_force)
+./vcartsn.cpp:4303:        PARTICLE* particle_array = eqn_params->particle_array;
+./vcartsn.cpp:4304:        num_drops = eqn_params->num_drops;
+./vcartsn.cpp:4305:        double *supersat = eqn_params->field->supersat;
+./vcartsn.cpp:4312:        double L = eqn_params->Lh;
+./vcartsn.cpp:4313:        double cp = eqn_params->Cp;
+./vcartsn.cpp:4328:            coeff = 4.0*PI*particle_array[i].rho * eqn_params->K
+./vcartsn.cpp:4330:            if (eqn_params->if_condensation)
+./vcartsn.cpp:4362:        if (eqn_params->Nclip[0] != 1 ||
+./vcartsn.cpp:4363:            eqn_params->Nclip[1] != 1 ||
+./vcartsn.cpp:4364:            eqn_params->Nclip[2] != 1)
+./vcartsn.cpp:4366:        if(eqn_params->is_bigdata)
