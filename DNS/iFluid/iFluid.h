@@ -105,11 +105,11 @@ struct _NS_SCHEME {
 typedef struct _NS_SCHEME NS_SCHEME;
 
 typedef struct {
-        int dim;
-        POINTER level_func_params;
+    int dim;
+    POINTER level_func_params;
 	NS_SCHEME num_scheme;
-        double rho1;
-        double rho2;
+    double rho1;
+    double rho2;
 	double mu1;
 	double mu2;
 	double U1[MAXD];

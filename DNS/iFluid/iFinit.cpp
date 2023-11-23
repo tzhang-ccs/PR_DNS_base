@@ -139,10 +139,10 @@ static void initRayleiTaylorIntfc(
 	    (void) printf("%f\n",level_func_params.phase[i]);
 	}
 	CursorAfterString(infile,"Enter density and viscosity of fluid 1:");
-        fscanf(infile,"%lf %lf",&iFparams->rho1,&iFparams->mu1);
+    fscanf(infile,"%lf %lf",&iFparams->rho1,&iFparams->mu1);
 	(void) printf("%f %f\n",iFparams->rho1,iFparams->mu1);
-        CursorAfterString(infile,"Enter density and viscosity of fluid 2:");
-        fscanf(infile,"%lf %lf",&iFparams->rho2,&iFparams->mu2);
+    CursorAfterString(infile,"Enter density and viscosity of fluid 2:");
+    fscanf(infile,"%lf %lf",&iFparams->rho2,&iFparams->mu2);
 	(void) printf("%f %f\n",iFparams->rho2,iFparams->mu2);
 	CursorAfterString(infile,"Enter gravity:");
         for (i = 0; i < dim; ++i)
