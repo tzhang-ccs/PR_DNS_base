@@ -15,4 +15,5 @@ ulimit -s unlimited
 #cd /sdcc/u/tzhang/PR_DNS_base/DNS/climate
 #srun -n 256 /global/homes/z/zhangtao/cfs_m4402/PR_DNS_base_ray/DNS/climate/climate -d 3 -p 8 8 4  -i input-pr-dns/in-entrainment3dd_case1  -o out-entrainment3dd_case1
 #srun -n 256 /global/homes/z/zhangtao/cfs_m4402/PR_DNS_base_ray/DNS/climate/climate -d 3 -p 8 8 4  -i input-sensitivity/in-entrainment3dd_case1_radius  -o out-entrainment3dd_case1_radius
-srun -n 256 /global/homes/z/zhangtao/cfs_m4402/PR_DNS_base_ray/DNS/climate/climate -d 3 -p 8 8 4  -i input-sensitivity/in-entrainment3dd_case1_qv  -o out-entrainment3dd_case1_qv
+#srun -n 256 /global/homes/z/zhangtao/cfs_m4402/PR_DNS_base_ray/DNS/climate/climate -d 3 -p 8 8 4  -i input-sensitivity/in-entrainment3dd_case1_qv  -o out-entrainment3dd_case1_qv
+srun -n 256 /global/homes/z/zhangtao/cfs_m4402/PR_DNS_base_ray/DNS/climate/climate -d 3 -p 8 8 4  -i input-sensitivity/in-entrainment3dd_case1_viscty  -o ../../../PR_DNS_out//out-entrainment3dd_case1_viscty

@@ -1023,15 +1023,15 @@ extern void ParticlePropagate(Front *fr)
 	if (debugging("trace"))
 	    printf("Entering ParticlePropage()\n");
 	start_clock("ParticlePropagate");
-        RECT_GRID *gr = FT_GridIntfcTopGrid(fr);
-        RECT_GRID *rect_grid = &(fr->pp_grid->Global_grid);
-        IF_PARAMS *iFparams = (IF_PARAMS*)fr->extra1;
+    RECT_GRID *gr = FT_GridIntfcTopGrid(fr);
+    RECT_GRID *rect_grid = &(fr->pp_grid->Global_grid);
+    IF_PARAMS *iFparams = (IF_PARAMS*)fr->extra1;
 	PARAMS *eqn_params = (PARAMS*)fr->extra2;
 	PARTICLE* particle_array = eqn_params->particle_array;
 	double **vel = iFparams->field->vel;
 	double *supersat = eqn_params->field->supersat;
 	double *gravity = iFparams->gravity;
-        int *gmax = FT_GridIntfcTopGmax(fr);
+    int *gmax = FT_GridIntfcTopGmax(fr);
 	int i, j, index, dim = gr->dim;
 	double T;
 	int ic[MAXD];
@@ -1042,9 +1042,9 @@ extern void ParticlePropagate(Front *fr)
 	double a;  /*acceleration*/
 	double dt = fr->dt;
 
-        /*computing finite respone time*/
-        double rho_0    = iFparams->rho2;/*fluid density*/
-        double mu       = iFparams->mu2;/*viscosity*/
+    /*computing finite respone time*/
+    double rho_0    = iFparams->rho2;/*fluid density*/
+    double mu       = iFparams->mu2;/*viscosity*/
 	double R, rho, tau_p, delta_R;
 	double R_max = 0;
 	double R_min = HUGE;
